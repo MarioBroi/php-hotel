@@ -44,10 +44,44 @@ $hotels = [
 
 //var_dump($hotels);
 
-foreach ($hotels as $hotel) {
-    foreach ($hotel as $info) {
-        echo $info;
-    };
-    echo ("<br>");
-    echo ("<br>");
-};
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- bootstrap -->
+    <title>Hotel list</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex">
+                <?php
+
+                foreach ($hotels as $hotel) {
+                    echo ('<div class="card p-2 m-2">');
+                    echo ("<h2>") . ($hotel["name"]) . ("</h2>") . ($hotel["description"]);
+
+                    if ($hotel["parking"] == true) {
+                        echo ('<div>') . ("Disponibilitá di parcheggio ✅") . ("</div>");
+                    };
+
+                    echo ("<div>Voto complessivo: ") . ($hotel["vote"]) . ("</div>");
+
+                    echo ("<div>Distanza dal centro: ") . ($hotel["distance_to_center"]) . ("</div>");
+                    echo ('</div>');
+                };
+
+                ?>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
