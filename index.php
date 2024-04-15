@@ -64,16 +64,25 @@ $hotels = [
                 <?php
 
                 foreach ($hotels as $hotel) {
+
                     echo ('<div class="card p-2 m-2">');
+
                     echo ("<h2>") . ($hotel["name"]) . ("</h2>") . ($hotel["description"]);
+                    //hotel name and description
 
                     if ($hotel["parking"] == true) {
                         echo ('<div>') . ("Disponibilitá di parcheggio ✅") . ("</div>");
+                    } else {
+                        echo ('<div>') . ("Parcheggio non disponibile ❌") . ('</div>');
                     };
+                    //available parking
 
                     echo ("<div>Voto complessivo: ") . ($hotel["vote"]) . ("</div>");
+                    //vote
 
-                    echo ("<div>Distanza dal centro: ") . ($hotel["distance_to_center"]) . ("</div>");
+                    echo ("<div>Distanza dal centro: ") . ($hotel["distance_to_center"]) . (" Km</div>");
+                    //distance
+
                     echo ('</div>');
                 };
 
